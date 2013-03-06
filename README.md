@@ -1,6 +1,6 @@
 # Openlayers::Rails
 
-TODO: Write a gem description
+Use OpenLayers OpenStreet map in Rails
 
 ## Installation
 
@@ -18,7 +18,63 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Include the assets
+
+* application.js
+```
+//= require openlayers
+```
+
+* application.css
+```
+ *= require openlayers
+```
+
+### Use the map
+
+* Add the element the map will be appended to, sudo-haml looks like this:
+```
+body.map
+  .container
+    #map
+```
+
+* Add the javascript (coffeescript) to create a map
+```
+$map = $('.container #map')
+buildMap = ->
+  map = new OpenLayers.Map($map.get(0), {
+    # Precompiled by the openlayers-rails gem
+    theme: '/assets/openlayers/theme/default/style.css'
+  })
+  map.addLayer(new OpenLayers.Layer.OSM())
+  map.zoomToMaxExtent();
+  return map
+
+buildMap()
+```
+
+* Add the map styles
+```
+body.map {
+  &, .container, #map {
+    box-sizing: border-box;
+    height: 100%;
+  }
+  #map {
+    // Override twitter bootstrap image max-width;
+    img {
+      max-width: none;
+    }
+  }
+}
+```
+
+## Resources
+
+http://dev.openlayers.org/apidocs/files/OpenLayers/Map-js.html
+http://wiki.openstreetmap.org/wiki/OpenLayers_Simple_Example
+http://wiki.openstreetmap.org/wiki/Creating_your_own_tiles
 
 ## Contributing
 
