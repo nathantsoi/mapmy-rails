@@ -9,6 +9,7 @@ namespace :assets do
     RAILS_ROOT = File.expand_path('../../../', __FILE__)
     giri = Nokogiri::HTML(open(OPEN_LAYERS_DIR))
     latest = giri.css('tr td a').select{|el| el.text =~ /tar\.gz$/}.last.attr('href')
+    puts "latest version is #{latest}"
     tmp_tgz = File.join(LOCAL_CACHE, latest)
     tmp_extract = tmp_tgz.gsub(/\.tar\.gz$/, '')
     File.open(tmp_tgz, 'wb') { |f|
