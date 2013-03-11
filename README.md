@@ -20,27 +20,31 @@ Or install it yourself as:
 
 ### Include the assets
 
-* application.js
+application.js
+
 ```
 //= require openlayers
 ```
 
-* application.css
+application.css
+
 ```
  *= require openlayers
 ```
 
 ### Use the map
 
-* Add the element the map will be appended to, sudo-haml looks like this:
-```
+Add the element the map will be appended to, sudo-haml looks like this:
+
+```haml
 body.map
   .container
     #map
 ```
 
-* Add the javascript (coffeescript) to create a map
-```
+Add the javascript (coffeescript) to create a map
+
+```coffeescript
 $map = $('.container #map')
 buildMap = ->
   map = new OpenLayers.Map($map.get(0), {
@@ -54,8 +58,9 @@ buildMap = ->
 buildMap()
 ```
 
-* Add the map styles
-```
+Add the map styles
+
+```scss
 body.map {
   &, .container, #map {
     box-sizing: border-box;
