@@ -1,4 +1,4 @@
-module Openlayers
+module Mapmy
   module Rails
     VERSION = "0.0.1"
   end

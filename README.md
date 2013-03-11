@@ -1,4 +1,4 @@
-# Openlayers::Rails
+# Mapmy::Rails
 
 Use OpenLayers OpenStreet map in Rails
 
@@ -6,7 +6,7 @@ Use OpenLayers OpenStreet map in Rails
 
 Add this line to your application's Gemfile:
 
-    gem 'openlayers-rails'
+    gem 'mapmy-rails'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install openlayers-rails
+    $ gem install mapmy-rails
 
 ## Usage
 
@@ -48,7 +48,7 @@ Add the javascript (coffeescript) to create a map
 $map = $('.container #map')
 buildMap = ->
   map = new OpenLayers.Map($map.get(0), {
-    # Precompiled by the openlayers-rails gem
+    # Precompiled by the mapmy-rails gem
     theme: '/assets/openlayers/theme/default/style.css'
   })
   map.addLayer(new OpenLayers.Layer.OSM())

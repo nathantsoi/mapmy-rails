@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in openlayers-rails.gemspec
+# Specify your gem's dependencies in mapmy-rails.gemspec
 gemspec

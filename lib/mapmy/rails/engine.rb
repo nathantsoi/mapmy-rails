@@ -1,4 +1,4 @@
-module Openlayers
+module Mapmy
   module Rails
     class Engine < ::Rails::Engine
       # Make rails look at the vendored assets
